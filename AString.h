@@ -50,12 +50,12 @@ public:
     AString& operator= ( const char );
 
     AString operator+ ( const AString& ) const;
-	AString operator+ ( const string& ) const;
-	AString operator+ ( const char* ) const;
-	AString operator+ ( const char ) const;
+    AString operator+ ( const string& ) const;
+    AString operator+ ( const char* ) const;
+    AString operator+ ( const char ) const;
 
-	AString& operator+= ( const AString& );
-	AString& operator+= ( const string& );
+    AString& operator+= ( const AString& );
+    AString& operator+= ( const string& );
 	AString& operator+= ( const char* );
 	AString& operator+= ( const char );
 
@@ -65,8 +65,8 @@ public:
     AString operator( ) ( unsigned, unsigned ) const;
 
     bool operator== ( const AString& ) const;
-	bool operator== ( const string ) const;
-	bool operator== ( const char* ) const;
+    bool operator== ( const string ) const;
+    bool operator== ( const char* ) const;
 
 	friend bool operator== ( const string, const AString& );
 	friend bool operator== ( const char*, const AString& );
