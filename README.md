@@ -6,6 +6,6 @@ A custom string class with basic C String operations.<br /><br />
 * Dynamic memory  allocation.
 * Grow and shrink array automatically
 * Operators +, =, =+, <<, >>, [], (), and ==
-* Functions l0ike length, append, insert, remove, and swap
+* Functions like length, append, insert, remove, and swap
 * Can initialize and work with char* and std::string
 * More to come
