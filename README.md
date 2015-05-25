@@ -1,12 +1,11 @@
-<h1>AString</h1>
-<h3>Alex's String</h3>
+# AString - Alex's String #
 
-Custom string class with basic C String operations.<br /><br />
+A custom string class with basic C String operations.<br /><br />
 
-Features:<br />
--Dynamic memory  allocation.<br />
--Grow and shrink array automatically<br />
--Operators +, =, =+, <<, >>, [], (), and ==<br />
--Functions like length, append, insert, remove, and swap.<br />
--Can initialize and work with char* and std::string<br />
--More to come<br />
+### Features ###
+* Dynamic memory  allocation.
+* Grow and shrink array automatically
+* Operators +, =, =+, <<, >>, [], (), and ==
+* Functions l0ike length, append, insert, remove, and swap
+* Can initialize and work with char* and std::string
+* More to come
