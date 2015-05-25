@@ -237,13 +237,41 @@ void AString::swap( const unsigned ind1, const unsigned ind2 )
         temp = _array[ind1];
         _array[ind1] = _array[ind2];
         _array[ind2] = temp;
-
     }
 }
 
 void AString::shift( const int ammount )
 {
-    //TODO
+    int amnt = ammount;
+    if( amnt > (int)_size )
+        amnt = amnt % _size;
+    if( ammount > 0 )
+    {
+        char *temp = new char[amnt];
+        for( int i = 0; i < amnt; i++ )
+            temp[i] = _array[ (_size - amnt) + i ];
+
+        for( int i = _size - amnt - 1; i >= 0; i-- )
+            _array[i + amnt] = _array[i];
+
+        for( int i = 0; i < amnt; i++ )
+            _array[i] = temp[i];
+        delete[] temp;
+    }
+    else if( ammount < 0 )
+    {
+        amnt = amnt * -1;
+        char *temp = new char[amnt];
+        for( int i = 0; i < amnt; i++ )
+            temp[i] = _array[i];
+
+        for( int i = amnt; i <= (int)_size - 1; i++ )
+            _array[i - amnt] = _array[i];
+
+        for( int i = 0, j = _size - amnt; i < amnt; i++, j++)
+            _array[j] = temp[i];
+        delete[] temp;
+    }
 }
 
 
@@ -373,7 +401,10 @@ const char& AString::operator[] ( int ind ) const
 AString AString::operator( ) ( unsigned indF, unsigned indL ) const
 {
     AString temp;
-    for(unsigned i = indF; i <= indL; i++)
+    unsigned limit = indL;
+    if( limit > _size - 1 )
+        limit = _size;
+    for(unsigned i = indF; i <= limit; i++)
         temp.append(_array[i]);
     return temp;
 }
@@ -395,4 +426,3 @@ ifstream& operator>> ( ifstream& is, const AString& arr )
 {
     return is;
 }
-

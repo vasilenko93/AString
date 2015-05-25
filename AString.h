@@ -21,8 +21,6 @@ public:
 
     const unsigned length(  ) const;
     const unsigned max_length(  ) const;
-    const unsigned size(  ) const;
-    const unsigned used_size(  ) const;
 
     void append( const char );
     void append( const char* );
